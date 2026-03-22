@@ -100,6 +100,54 @@ class Linkedlist{
     }
 
    }
+   findmax()
+   {
+    let current=this.head;
+    let max = current.data;
+    while(current)
+    {
+        if(max<current.data)
+        {
+            max=current.data;
+        }
+        current=current.next;
+    }
+    return max;
+
+   }
+   findmin()
+   {
+    let current=this.head;
+    let min = current.data;
+    while(current)
+    {
+        if(min>current.data)
+        {
+            min=current.data;
+        }
+        current=current.next;
+    }
+    return min;
+
+   }
+   sum()
+   {
+        let sum=0;
+    let current=this.head;
+
+    while(current)
+    {
+        sum=sum+current.data;
+        current=current.next;
+    }
+    return sum;
+
+   }
+
+   reversebyindex()
+   {
+    
+   }
     print()
     {
         let current=this.head;
@@ -123,6 +171,9 @@ list.push(21);
 list.unshift(25);
 // console.log(list.include(25));
 console.log(list.update(25,27));
-list.delete(19);
+// list.delete(19);
+console.log(list.findmax());
+console.log(list.findmin());
+console.log(list.sum());
 list.print();
 console.log(list.length);
