@@ -144,9 +144,37 @@ class Linkedlist{
 
    }
 
-   reversebyindex()
+   reversebylength()
    {
+    let n=this.length;
+    let i;
     
+    while(n>0)
+    {
+        let current=this.head;
+        for(i=1;i<n;i++)
+    {
+
+        current=current.next;
+    }
+    console.log(current.data);
+    n--;
+    }
+   }
+   reverse()
+   {
+    let prev=null;
+    let current=this.head;
+    let next=null;
+    while(current)
+    {
+        next=current.next;
+        current.next=prev;
+        prev=current;
+        current=next;
+
+    }
+    this.head=prev;
    }
     print()
     {
@@ -171,9 +199,11 @@ list.push(21);
 list.unshift(25);
 // console.log(list.include(25));
 console.log(list.update(25,27));
-// list.delete(19);
+list.delete(19);
 console.log(list.findmax());
 console.log(list.findmin());
 console.log(list.sum());
+list.reversebylength()
+console.log(list.reverse());
 list.print();
 console.log(list.length);
